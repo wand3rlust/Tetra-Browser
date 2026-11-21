@@ -1,0 +1,142 @@
+.pt-view {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pt-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--border);
+}
+
+.pt-podfilter {
+  font-size: 13px;
+  color: var(--text-1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pt-toolbar button {
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+.pt-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.pt-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 8px;
+  row-gap: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12.5px;
+  color: var(--text-1);
+  cursor: pointer;
+  border-bottom: 1px solid var(--bg-1);
+}
+
+.pt-row:hover {
+  background: var(--bg-2);
+}
+
+.pt-row.selected {
+  background: #1b2a3f;
+  color: var(--text-0);
+}
+
+.pt-row.on-path {
+  color: var(--text-0);
+}
+
+.pt-toggle {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 4px;
+  flex-shrink: 0;
+  color: var(--text-2);
+}
+
+.pt-toggle-spacer {
+  width: 18px;
+  flex-shrink: 0;
+}
+
+.pt-toggle-sample {
+  font-family: var(--monospace);
+  color: var(--text-2);
+}
+
+.pt-binary {
+  color: var(--text-0);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.pt-args {
+  flex-basis: 100%;
+  color: var(--text-1);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+  min-width: 0;
+  padding-left: 26px; /* align under the binary, past the toggle */
+}
+
+.pt-pod {
+  color: var(--cyan);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.pt-hooks {
+  color: var(--purple);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.pt-exit {
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.pt-exit.ok { color: var(--green); }
+.pt-exit.bad { color: var(--red); }
+
+.pt-pid {
+  color: var(--text-2);
+  font-size: 11px;
+  margin-left: auto;
+  padding-right: 16px;
+  flex-shrink: 0;
+}
+
+.pt-synthetic {
+  color: var(--orange);
+  cursor: help;
+}
+
+.pt-legend {
+  display: flex;
+  gap: 24px;
+  padding: 8px 16px;
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 12px;
+  flex-shrink: 0;
+}

@@ -1,0 +1,206 @@
+.event-table-wrap {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+}
+
+.et-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px 16px;
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.et-count {
+  color: var(--text-2);
+  font-size: 13px;
+}
+
+.et-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.et-actions button {
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+.et-header,
+.et-row {
+  display: grid;
+  grid-template-columns: 104px 92px 56px minmax(150px, 1.6fr) minmax(110px, 1fr) minmax(80px, 0.7fr) 72px;
+  gap: 12px;
+  padding: 0 16px;
+  align-items: center;
+  min-width: 800px;
+  width: 100%;
+}
+
+.et-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-1);
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.et-col-head {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.et-col-head.sorted {
+  color: var(--accent);
+}
+
+.sort-arrow {
+  font-size: 9px;
+}
+
+.et-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  outline: none;
+}
+
+.et-body:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--accent-dim);
+}
+
+.et-row {
+  height: 32px;
+  border-bottom: 1px solid var(--bg-1);
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-1);
+  overflow: hidden;
+}
+
+.et-row:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.et-row:hover {
+  background: var(--bg-2);
+}
+
+.et-row.selected {
+  background: #1b2a3f;
+  box-shadow: inset 2px 0 0 var(--accent);
+  color: var(--text-0);
+}
+
+.et-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c-pid,
+.c-time {
+  color: var(--text-1);
+  font-size: 12px;
+}
+
+.c-proc .binary {
+  color: var(--text-0);
+}
+
+.c-proc .args {
+  color: var(--text-1);
+  margin-left: 8px;
+}
+
+.c-pod .ns {
+  color: var(--text-1);
+}
+
+.c-pod .host {
+  color: var(--text-1);
+  font-style: italic;
+}
+
+.c-node {
+  font-size: 12px;
+}
+
+/* type badges */
+.badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-family: var(--monospace);
+  border: 1px solid transparent;
+}
+
+.badge.type-process_exec { background: #14324a; color: var(--cyan); border-color: #1e4d6e; }
+.badge.type-process_exit { background: #1d2333; color: var(--text-1); border-color: var(--border); }
+.badge.type-process_kprobe { background: #46234533; color: var(--purple); border-color: #6d3f6c; }
+.badge.type-process_tracepoint { background: #3d2d1433; color: var(--orange); border-color: #6e521e; }
+.badge.type-process_uprobe { background: #23422f33; color: var(--green); border-color: #2e5c40; }
+.badge.type-process_usdt { background: #23422f33; color: var(--green); border-color: #2e5c40; }
+.badge.type-process_lsm { background: #4a233333; color: var(--red); border-color: #6e1e2e; }
+.badge.type-process_loader { background: #14324a; color: var(--cyan); border-color: #1e4d6e; }
+.badge.type-process_throttle { background: #1d2333; color: var(--yellow); border-color: var(--border); }
+.badge.type-rate_limit_info { background: #1d2333; color: var(--yellow); border-color: var(--border); }
+
+.c-type .fn {
+  margin-left: 6px;
+  color: var(--text-2);
+  font-size: 11px;
+}
+
+.c-exit .ok { color: var(--green); }
+.c-exit .bad { color: var(--red); font-weight: 600; }
+.c-exit .sig { color: var(--orange); margin-left: 4px; font-size: 11px; }
+
+.action {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 8px;
+  font-size: 10.5px;
+  font-family: var(--monospace);
+  background: var(--bg-3);
+  color: var(--text-1);
+}
+
+.action-post { color: var(--cyan); }
+.action-sigkill { color: var(--red); border-color: var(--red); }
+.action-unfollow { color: var(--text-2); }
+
+.et-empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-2);
+}
+
+.et-skeleton {
+  height: 100%;
+  background: linear-gradient(90deg, var(--bg-2) 25%, var(--bg-3) 50%, var(--bg-2) 75%);
+  background-size: 200% 100%;
+  animation: et-shimmer 1s linear infinite;
+  border-radius: 4px;
+}
+
+@keyframes et-shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}

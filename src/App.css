@@ -1,0 +1,130 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.app-title {
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-logo {
+  height: 68px;
+  width: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+@media (max-width: 700px) {
+  .app-logo {
+    height: 44px;
+  }
+}
+
+.file-count {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-2);
+  margin-left: 8px;
+}
+
+.warn-count {
+  color: var(--orange);
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text-1);
+  padding: 7px 16px;
+}
+
+.tab:hover {
+  color: var(--text-0);
+  background: var(--bg-2);
+  border-color: var(--border);
+}
+
+.tab.active {
+  background: var(--bg-3);
+  color: var(--text-0);
+  border-color: var(--border);
+}
+
+.filtered-badge {
+  background: var(--accent-dim);
+  color: #fff;
+  border-radius: 10px;
+  padding: 1px 8px;
+  font-size: 11px;
+  margin-left: 4px;
+}
+
+.filtered-badge.dim {
+  background: var(--bg-3);
+  color: var(--text-1, #a8b3c5);
+}
+
+.loading-bar {
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+  color: var(--accent);
+  padding: 8px 20px;
+  font-size: 13px;
+}
+
+.error-banner {
+  background: #3d1720;
+  border-bottom: 1px solid var(--red);
+  color: var(--red);
+  padding: 8px 20px;
+  font-size: 13px;
+}
+
+.app-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.events-layout {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+/* events: table left, detail right */
+.events-layout > .event-table-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.events-layout > .event-detail {
+  width: clamp(320px, 36vw, 500px);
+  flex-shrink: 0;
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  overflow-x: hidden;
+}

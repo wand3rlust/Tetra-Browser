@@ -1,0 +1,73 @@
+.filter-bar {
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.filter-chips {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  color: var(--text-1);
+}
+
+.chip.all {
+  color: var(--text-0);
+  border-color: var(--accent-dim);
+}
+
+.chip.active {
+  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.filter-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-item.grow {
+  flex: 1;
+  min-width: 220px;
+}
+
+.filter-item select,
+.filter-item input {
+  min-width: 130px;
+  font-size: 13px;
+  padding: 5px 8px;
+}
+
+.filter-label {
+  font-size: 11px;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filter-bar .reset {
+  font-size: 13px;
+  padding: 6px 12px;
+}
